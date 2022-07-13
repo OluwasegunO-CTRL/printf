@@ -1,1 +1,1 @@
-This is a custom print function
+This is a custom printf function
