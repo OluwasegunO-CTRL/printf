@@ -18,8 +18,7 @@ typedef struct print
 {
 	char *type_arg;
 	int (*f)(va_list, char *, unsigned int);
-}print_t:
-
+}print_t;
 
 
 int _putchar_c(char c);
