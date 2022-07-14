@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * ev_print_func - Evaluates and returns the amount of identifiers.
+ * get_print_func - selects the correct function to perform the operation
  * @s: argument indentifier
- * @index: index of argument identifier.
- * Return: amount of identifiers.
+ * @index: index for argument indentifier
+ * Return: pointer to a function.
  */
 
-int ev_print_func(const char *s, int index)
+int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int)
 {
 	print_t pr[] = {
 		{"c", print_chr},
@@ -25,6 +25,7 @@ int ev_print_func(const char *s, int index)
 	int i = 0, j = 0, first_index;
 
 	first_index = index;
+
 	while (pr[i].type_arg)
 	{
 		if (s[index] == pr[i].type_arg[j])
@@ -41,5 +42,5 @@ int ev_print_func(const char *s, int index)
 			index = first_index;
 		}
 	}
-	return (j);
+	return (pr[i].f);
 }
