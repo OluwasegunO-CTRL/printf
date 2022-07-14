@@ -20,6 +20,20 @@ typedef struct print
 	int (*f)(va_list, char *, unsigned int);
 }print_t:
 
+
+
+int _putchar_c(char c);
+int _putchar(va_list a);
+int print_str(va_list a);
+int print_uint(unsigned int i);
+int print_int(va_list a);
+int print_va_args(char c, va_list a);
+int _putchar_c(char c);
+int _putchar(va_list a);
+int print_str(va_list a);
+int print_uint(unsigned int i);
+int print_int(va_list a);
+int print_va_args(char c, va_list a);
 int _printf(const char *format, ...);
 int print_prg(va_list __attribute__((unused)), char *, unsigned int);
 int print_chr(va_list arguments, char *buf, unsigned int ibuf);
